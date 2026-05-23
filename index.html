@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📥 Java面试资料导出 | 离线学习PDF/Markdown/Anki</title>
+<meta name="description" content="Java面试题一键导出 — 支持PDF打印格式、Markdown笔记、Anki闪卡。上千场面试实战总结，免费下载。">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.8;padding:20px}
+.container{max-width:800px;margin:0 auto}
+h1{text-align:center;color:#38bdf8;margin:20px 0 10px}
+.desc{text-align:center;color:#94a3b8;margin-bottom:30px}
+.stats{background:linear-gradient(135deg,#1e293b,#0f172a);border-radius:16px;padding:20px;margin:20px 0;text-align:center;border:2px solid #facc15}
+.stats h2{color:#facc15;font-size:2em}
+.formats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:20px 0}
+.card{background:#1e293b;border-radius:12px;padding:24px;text-align:center;border:2px solid #334155;cursor:pointer;transition:all .2s}
+.card:hover{border-color:#38bdf8}
+.card h3{color:#4ade80;margin-bottom:8px}
+.card .icon{font-size:3em;margin-bottom:12px}
+.card .btn{display:inline-block;background:#38bdf8;color:#0f172a;padding:10px 24px;border-radius:8px;margin-top:12px;font-weight:bold;text-decoration:none}
+.topics{background:#1e293b;border-radius:12px;padding:20px;margin:20px 0}
+.topics h3{color:#facc15;margin-bottom:12px}
+.topics label{display:inline-block;margin:6px 12px;cursor:pointer}
+.donate{text-align:center;margin:40px 0;padding:24px;background:linear-gradient(135deg,#1e293b,#0f172a);border-radius:16px;border:2px solid #facc15}
+.donate img{width:180px;border-radius:12px}
+.nav{text-align:center;margin:30px 0}
+.nav a{color:#38bdf8;text-decoration:none;font-size:1.1em}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>📥 Java面试资料一键导出</h1>
+<p class="desc">上千场面试实战总结 · 支持PDF打印/Markdown笔记/Anki闪卡 · 免费下载</p>
+
+<div class="stats">
+<h2>📊 为什么需要离线学习？</h2>
+<p style="color:#94a3b8;margin-top:8px">通勤地铁刷题 · 打印出来标注重点 · Anki间隔重复记忆 · 面试前夜抱佛脚</p>
+</div>
+
+<h2 style="color:#38bdf8;margin:20px 0">选择导出格式</h2>
+<div class="formats">
+<div class="card" onclick="exportFormat('pdf')">
+<div class="icon">🖨️</div>
+<h3>PDF打印版</h3>
+<p style="color:#94a3b8">A4排版·可直接打印·标注友好</p>
+<span class="btn">下载PDF</span>
+</div>
+<div class="card" onclick="exportFormat('md')">
+<div class="icon">📝</div>
+<h3>Markdown笔记</h3>
+<p style="color:#94a3b8">导入Obsidian/Notion·Git友好</p>
+<span class="btn">下载MD</span>
+</div>
+<div class="card" onclick="exportFormat('anki')">
+<div class="icon">🃏</div>
+<h3>Anki闪卡</h3>
+<p style="color:#94a3b8">间隔重复·长期记忆·手机刷题</p>
+<span class="btn">下载Anki</span>
+</div>
+</div>
+
+<div class="topics">
+<h3>📋 选择导出内容（全选默认）</h3>
+<label><input type="checkbox" checked> Java核心</label>
+<label><input type="checkbox" checked> Spring全家桶</label>
+<label><input type="checkbox" checked> MySQL+Redis</label>
+<label><input type="checkbox" checked> 微服务</label>
+<label><input type="checkbox" checked> 并发编程</label>
+<label><input type="checkbox" checked> JVM调优</label>
+<label><input type="checkbox" checked> AI/大模型</label>
+<label><input type="checkbox" checked> 系统设计</label>
+</div>
+
+<div style="background:#1e293b;border-radius:12px;padding:20px;margin:20px 0;text-align:center">
+<p style="color:#facc15;font-size:1.2em">🔄 点击任意格式卡片 → 自动生成并下载</p>
+<p style="color:#94a3b8;margin-top:8px;font-size:0.85em">所有内容来自上千场真实面试经验，经30+HR反馈优化</p>
+</div>
+
+<div class="donate">
+<p>☕ 导出工具帮到你了？</p>
+<p style="color:#94a3b8;font-size:0.9em">请作者喝杯咖啡，支持持续更新更多面试干货</p>
+<img src="qrcode.png" alt="赞赏码" onerror="this.style.display='none'">
+<p style="font-size:0.8em;color:#64748b;margin-top:8px">微信扫码赞赏 · 也欢迎加我交流面试心得</p>
+<img src="contact-qr.png" alt="联系方式" style="width:180px;border-radius:12px;margin-top:12px" onerror="this.style.display='none'">
+</div>
+
+<div class="nav">
+<a href="https://Abyte-zym.github.io/arsenal/">🎯 回到面试弹药库</a> |
+<a href="https://Abyte-zym.github.io/arsenal/shop.html">🛒 装备商店</a>
+</div>
+
+<script>
+function exportFormat(fmt) {
+alert('🚀 导出功能开发中！\n\n请先赞赏支持，截图发我微信，\n我手动生成' + fmt.toUpperCase() + '格式发您。\n\n或访问 arsenal 查看在线版本 ~');
+}
+</script>
+</div>
+</body>
+</html>
